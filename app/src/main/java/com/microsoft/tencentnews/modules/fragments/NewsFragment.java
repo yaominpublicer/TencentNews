@@ -76,5 +76,7 @@ public class NewsFragment extends Fragment{
         itemTabLayout = (TabLayout) view.findViewById(R.id.tabLayout_news);
         viewPage_news = (ViewPager) view.findViewById(R.id.viewPager_news);
 
+        //
+
     }
 }
