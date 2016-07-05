@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".modules.activitys.SplashActivity">
+
+    <LinearLayout
+        android:id="@+id/radiobuttonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+
+        >
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+
+            >
+
+            <RadioButton
+                android:id="@+id/news"
+                style="@style/RadioButtonStyle"
+                android:text="@string/news"
+                android:drawableTop="@drawable/selector_news"
+                android:checked="true"
+
+                />
+
+            <RadioButton
+                android:id="@+id/recommend"
+               style="@style/RadioButtonStyle"
+                android:text="@string/recommend"
+                android:drawableTop="@drawable/selector_recommend"
+
+
+                />
+
+            <RadioButton
+                android:id="@+id/live"
+                style="@style/RadioButtonStyle"
+                android:text="@string/live"
+                android:drawableTop="@drawable/selector_live"
+
+                />
+
+            <RadioButton
+                android:id="@+id/aboutMe"
+                style="@style/RadioButtonStyle"
+                android:text="@string/me"
+                android:drawableTop="@drawable/selector_aboutme"
+
+                />
+        </RadioGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/radiobuttonContainer"
+
+        android:layout_marginBottom="10dp"
+        />
+</RelativeLayout>
