@@ -1,32 +1,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.microsoft.tencentnews.modules.fragments.NewsFragment">
+    tools:context=".modules.fragment_news.ui.NewsFragment">
     <!-- TODO: Update blank fragment layout -->
-
-
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout_news"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@color/colorPrimary"
-        >
-
-
-    </android.support.design.widget.TabLayout>
+        android:layout_marginRight="48dp"
+        android:fitsSystemWindows="true"
+        android:paddingRight="10dp"
+        app:paddingEnd="10dp"
+        app:paddingStart="10dp"
+        app:tabGravity="center"
+        app:tabIndicatorHeight="@null"
+        app:tabMaxWidth="80dp"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextAppearance="@android:style/TextAppearance.Holo.Large"
+        app:tabTextColor="#7F7F7F"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabLayout_news"
-        android:background="@color/colorUnSelector"
+        android:layout_below="@id/tabLayout_news"/>
 
-        >
- </android.support.v4.view.ViewPager>
+    <ImageView
+        android:id="@+id/imgPlus_news"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="16dp"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/pluse"
+        android:scaleType="centerCrop"
 
 
 
 
+
+
+
+        />
 </RelativeLayout>

@@ -2,10 +2,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".base.BaseFragment">
+    tools:context=".modules.fragment_in_news.fragment_news_entertaiment.ui.News_entertaimentFragment">
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:text="new_entertaiment_fragment" />
 </FrameLayout>

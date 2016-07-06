@@ -6,4 +6,5 @@
 
     <color name="colorSelector">#56abe4</color>
     <color name="colorUnSelector">#a9b7b7</color>
+    <color name="textColor">#9C9C9C</color>
 </resources>

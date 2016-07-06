@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+
+    >
+
+    <ImageView
+        android:id="@+id/img_news_news"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon"
+
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        />
+
+        
+    <TextView
+        android:id="@+id/title_news_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/img_news_news"
+        android:hint="习近平指示解放军武警部队支持地方做好防汛救灾"
+        android:textSize="18sp"
+        android:textColor="@color/textColor"
+
+        android:maxLines="2"
+        android:lineSpacingExtra="5dp"
+
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+
+        />
+
+    <TextView
+        android:id="@+id/comment_news_news"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/img_news_news"
+
+       android:layout_alignBottom="@id/img_news_news"
+
+        android:hint="专题中央政府网230评论"
+        android:padding="5dp"
+
+
+
+
+
+        />
+
+
+
+
+
+
+</RelativeLayout>
