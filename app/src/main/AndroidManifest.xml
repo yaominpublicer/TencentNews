@@ -2,6 +2,7 @@
 <manifest package="com.microsoft.tencentnews"
 xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
 <application
     android:name=".base.MyApp"
     android:allowBackup="true"
