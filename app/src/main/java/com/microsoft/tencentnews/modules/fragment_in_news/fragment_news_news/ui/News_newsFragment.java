@@ -4,6 +4,7 @@ package com.microsoft.tencentnews.modules.fragment_in_news.fragment_news_news.ui
 
 import android.content.res.AssetManager;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -22,6 +23,7 @@ import java.util.List;
  *
  */
 public class News_newsFragment extends BaseFragment{
+
 
     private RecyclerView recyclerView;
     private HashMap<String , List<String>> interfaceUrlMap=new HashMap<>();
@@ -86,15 +88,18 @@ public class News_newsFragment extends BaseFragment{
             list.add("title and comment in recycle view "+i);
 
         }
-        News_newsAdapter adapter = new News_newsAdapter(getActivity().getApplicationContext(),list);
+
+
+        News_newsAdapter adapter = new News_newsAdapter(getActivity(),list);
 
 
 
 
 
         //3:setadapter
+        LinearLayoutManager manager= new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
 
-
+        recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
 
 
