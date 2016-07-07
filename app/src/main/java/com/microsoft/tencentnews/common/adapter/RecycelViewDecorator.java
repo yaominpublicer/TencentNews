@@ -136,7 +136,14 @@ public class RecycelViewDecorator extends RecyclerView.ItemDecoration{
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state){
         super.getItemOffsets(outRect, view, parent, state);
 
+        if(myorientation == HORIZONTAL){
 
+            outRect.set(0,0,dividerDrawable.getIntrinsicWidth(),0);
+
+        }else {
+            outRect.set(0,0,dividerDrawable.getIntrinsicHeight(),0);
+
+        }
 
     }
 }
