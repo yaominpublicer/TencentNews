@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+
+    >
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+
+        android:src="@drawable/p98"
+        android:scaleType="centerCrop"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="武汉蔡甸区雨夜转移上万受灾村民"
+
+        android:layout_marginLeft="10dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        />
+
+    <ImageView
+        android:id="@+id/userflage_live"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/live_flag_user"
+        android:scaleType="centerCrop"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/commentCount_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="21195"
+        android:textSize="12sp"
+
+       android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/userflage_live"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="腾讯新闻"
+        android:textSize="12sp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:layout_toRightOf="@id/commentCount_live"
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="13小时前"
+        android:textSize="12sp"
+
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+       android:layout_alignParentRight="true"
+
+        />
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

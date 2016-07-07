@@ -11,6 +11,7 @@ import android.view.View;
 import com.microsoft.tencentnews.R;
 import com.microsoft.tencentnews.base.BaseFragment;
 import com.microsoft.tencentnews.common.adapter.News_newsAdapter;
+import com.microsoft.tencentnews.common.adapter.RecycelViewDecorator;
 import com.microsoft.tencentnews.common.utils.UtilsAssets;
 
 import java.io.IOException;
@@ -80,15 +81,15 @@ public class News_newsFragment extends BaseFragment{
         List<String> videoList = interfaceUrlMap.get("video_interface.txt");
 
 
+        //1:根据接口数据下载
+
+
 
         //2:adapter
         List<String> list=new ArrayList<>();
-        for(int i = 0; i < 50; i++){
-
-            list.add("title and comment in recycle view "+i);
-
+        for(int i = 0; i < 50; i++) {
+            list.add("title and comment in recycle view " + i);
         }
-
 
         News_newsAdapter adapter = new News_newsAdapter(getActivity(),list);
 
@@ -99,6 +100,8 @@ public class News_newsFragment extends BaseFragment{
         //3:setadapter
         LinearLayoutManager manager= new LinearLayoutManager(getActivity(),LinearLayoutManager.VERTICAL,false);
 
+        RecycelViewDecorator decorator = new RecycelViewDecorator(getActivity(),1);
+        recyclerView.addItemDecoration(decorator);
         recyclerView.setLayoutManager(manager);
         recyclerView.setAdapter(adapter);
 
