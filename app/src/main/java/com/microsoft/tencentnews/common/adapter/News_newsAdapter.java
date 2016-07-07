@@ -10,9 +10,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.microsoft.tencentnews.R;
 import com.microsoft.tencentnews.modules.fragment_in_news.fragment_news_news.bean.NewsBean;
 
@@ -49,16 +51,24 @@ public class News_newsAdapter extends RecyclerView.Adapter{
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
+    public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position){
         ((MyViewHolder) holder).titleText.setText(newsContentList.get(position).getTitle());
         ((MyViewHolder) holder).comment.setText(newsContentList.get(position).getSource());
         String imgurl = newsContentList.get(position).getThumbnails_qqnews_photo().get(0);
+        Log.e( "onBindViewHolder: ", imgurl);
         final Bitmap[] holderbitmap = new Bitmap[1];
         // volley 下载图片包括二次采样输入（maxwidth,maxheight）
+
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
         ImageRequest imageRequest = new ImageRequest(imgurl, new Response.Listener<Bitmap>(){
             @Override
             public void onResponse(Bitmap bitmap){
-                holderbitmap[0] = bitmap;
+
+
+                ((MyViewHolder) holder).imageView.setImageBitmap(bitmap);
+                Log.e("onErrorResponse: ", "image down ok ");
+
+
             }
         }, maxWidth, maxHeight, ImageView.ScaleType.CENTER_CROP, Bitmap.Config.RGB_565, new Response.ErrorListener(){
             @Override
@@ -68,7 +78,9 @@ public class News_newsAdapter extends RecyclerView.Adapter{
             }
         });
 
-        ((MyViewHolder) holder).imageView.setImageBitmap(holderbitmap[0]);
+        requestQueue.add(imageRequest);
+
+
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

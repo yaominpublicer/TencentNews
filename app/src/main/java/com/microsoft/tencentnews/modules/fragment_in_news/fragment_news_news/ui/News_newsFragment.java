@@ -171,7 +171,6 @@ public class News_newsFragment extends BaseFragment{
     }
 
 
-
     public void recycleViewStepLoad(int pagenum){
 
         final NewsBean nb = new NewsBean();

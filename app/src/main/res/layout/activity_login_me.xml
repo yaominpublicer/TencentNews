@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<RelativeLayout
+    android:id="@+id/toolbar_login"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_alignParentTop="true"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_promptbox_close"
+        android:scaleType="centerCrop"
+        android:layout_alignParentRight="true"
+
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#C2C2C2"
+        android:layout_alignParentBottom="true"
+        />
+
+
+</RelativeLayout>
+
+    
+    <TextView
+        android:id="@+id/account_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/toolbar_login"
+
+        android:background="@drawable/loginbutton_shape"
+
+        android:drawableLeft="@mipmap/login_icon_account"
+
+
+        android:hint="  QQ号/腾讯微博/邮箱"
+        android:gravity="left|center_vertical"
+
+        android:layout_margin="20dp"
+        android:padding="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/pwd_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/account_login"
+
+        android:background="@drawable/loginbutton_shape"
+
+        android:drawableLeft="@mipmap/login_icon_password"
+
+        android:hint="  请输入密码"
+        android:gravity="left|center_vertical"
+
+        android:layout_margin="20dp"
+        android:padding="10dp"
+
+        />
+
+    <Button
+        android:id="@+id/loginbutton_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:background="@drawable/loginbutton_shape"
+        android:text="登录"
+        android:textSize="18sp"
+        android:textColor="#76AAAA"
+        android:backgroundTint="#C2C2C2"
+        android:gravity="center"
+        android:layout_below="@id/pwd_login"
+
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        />
+
+
+
+</RelativeLayout>

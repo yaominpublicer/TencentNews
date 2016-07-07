@@ -16,6 +16,7 @@
         >
 
         <ImageView
+            android:id="@+id/left_top_img_me"
 
             android:layout_width="38dp"
             android:layout_height="38dp"
@@ -24,8 +25,10 @@
 
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
+            android:onClick="clickicon"
             />
         <ImageView
+            android:id="@+id/right_top_img_me"
 
             android:layout_width="38dp"
             android:layout_height="38dp"
@@ -34,9 +37,11 @@
 
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
+            android:onClick="clickicon"
             />
 
         <ImageView
+
             android:id="@+id/user_head_me"
             android:layout_width="72dp"
             android:layout_height="72dp"
@@ -44,6 +49,7 @@
             android:scaleType="centerCrop"
 
             android:layout_centerInParent="true"
+            android:onClick="clickicon"
 
             />
 
@@ -63,87 +69,100 @@
     
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="72dp"
+        android:layout_height="78dp"
         android:background="#627A92"
+
+
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_aboutme_daynight"
+                android:id="@+id/img01_me"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/night_personal_iocn_rijian"
 
 
                 />
 
-            <ToggleButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:background="@null"
-                android:singleLine="true"
-                android:textOff="夜间模式"
-                android:textOn="日间模式" />
+           <TextView
+               android:id="@+id/text01_me"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="日间模式"
+               android:layout_marginTop="-5dp"
+               android:textColor="#EAEAEA"
+               />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_aboutme_daynight"
+                android:id="@+id/img02_me"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/night_personal_iocn_tupian"
 
 
                 />
 
-            <ToggleButton
+            <TextView
+                android:id="@+id/text02_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:singleLine="true"
-                android:textOff="夜间模式"
-                android:textOn="日间模式" />
+                android:text="日间模式"
+                android:layout_marginTop="-5dp"
+                android:textColor="#EAEAEA"
+                />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/selector_aboutme_daynight"
+                android:id="@+id/img03_me"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:src="@drawable/night_personal_icon_offline"
+                android:layout_marginTop="-2dp"
 
 
                 />
 
-            <ToggleButton
+            <TextView
+                android:id="@+id/text03_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:singleLine="true"
-                android:textOff="夜间模式"
-                android:textOn="日间模式" />
+                android:text="日间模式"
+                android:layout_marginTop="-5dp"
+                android:textColor="#EAEAEA"
+                />
         </LinearLayout>
     </LinearLayout>
 
 
     <RelativeLayout
+        android:id="@+id/myattention_me"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
+        android:onClick="clickicon"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -169,10 +188,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/myshoucang_me"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
+        android:onClick="clickicon"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -198,10 +219,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/mycomment_me"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
+        android:onClick="clickicon"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -227,10 +250,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/game_me"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
+        android:onClick="clickicon"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -256,10 +281,12 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/fankui_me"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
+        android:onClick="clickicon"
         >
         <TextView
             android:layout_width="wrap_content"
