@@ -141,7 +141,7 @@ public class RecycelViewDecorator extends RecyclerView.ItemDecoration{
             outRect.set(0,0,dividerDrawable.getIntrinsicWidth(),0);
 
         }else {
-            outRect.set(0,0,dividerDrawable.getIntrinsicHeight(),0);
+            outRect.set(0,0,0,dividerDrawable.getIntrinsicHeight());
 
         }
 

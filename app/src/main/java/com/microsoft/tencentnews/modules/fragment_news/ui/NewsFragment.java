@@ -1,5 +1,6 @@
 package com.microsoft.tencentnews.modules.fragment_news.ui;
 
+import android.content.Context;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -172,18 +173,7 @@ public class NewsFragment extends BaseFragment{
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+    protected void obtainContext(Context context){
+    }
 }

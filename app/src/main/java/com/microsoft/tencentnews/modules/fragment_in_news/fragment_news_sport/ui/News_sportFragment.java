@@ -1,5 +1,6 @@
 package com.microsoft.tencentnews.modules.fragment_in_news.fragment_news_sport.ui;
 
+import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
@@ -30,5 +31,9 @@ public class News_sportFragment extends BaseFragment{
 
     @Override
     protected void loadData(){
+    }
+
+    @Override
+    protected void obtainContext(Context context){
     }
 }
