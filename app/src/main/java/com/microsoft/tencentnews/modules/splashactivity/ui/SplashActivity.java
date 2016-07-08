@@ -13,6 +13,7 @@ public class SplashActivity extends BaseActivity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(setViewID());
+        initEvent();
 
 
 
@@ -34,6 +35,7 @@ public class SplashActivity extends BaseActivity{
 
     @Override
     protected void initEvent(){
+        //SystemClock.sleep(3000);
         this.startActivity(new Intent(this,MainActivity.class));
         this.finish();
     }

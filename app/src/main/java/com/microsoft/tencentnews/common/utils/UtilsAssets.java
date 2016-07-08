@@ -1,5 +1,6 @@
 package com.microsoft.tencentnews.common.utils;
 
+import android.content.Context;
 import android.content.res.AssetManager;
 
 import java.io.BufferedReader;
@@ -7,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -65,4 +67,46 @@ public class UtilsAssets{
         }
         return null;
     }
+
+    /**
+     * \
+     * @param context
+     * @param assetPath  文件夹路径  （如：“newsinterface”）
+     * @return 文件夹下的文件map k:file_name  v:list<string>
+     */
+
+    public static HashMap<String,List<String>> getInterfaceUrlMap(Context context,String assetPath){
+
+
+        AssetManager assetManager = context.getResources().getAssets();
+        HashMap<String,List<String>> interfaceUrlMap = new HashMap<>();
+        try{
+            String[] fileList = assetManager.list(assetPath);
+            for(int i = 0; i < fileList.length; i++){
+                List<String> interfaceList = UtilsAssets.getInterfaceFromAssets(assetManager, assetPath+"/" + fileList[i]);
+                //interfaceMap 存news模块不同页面的接口；k=文件名，v=接口字符串；
+                if(interfaceList != null){
+                    interfaceUrlMap.put(fileList[i], interfaceList);
+                }
+            }
+
+            if(interfaceUrlMap.size() <= 0){
+                return null;
+            }else {
+
+               return interfaceUrlMap;
+
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+
+
+
+
+
 }

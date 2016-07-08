@@ -26,7 +26,10 @@
         android:id="@+id/viewPager_news"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/tabLayout_news"/>
+        android:layout_below="@id/tabLayout_news"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        />
 
     <ImageView
         android:id="@+id/imgPlus_news"

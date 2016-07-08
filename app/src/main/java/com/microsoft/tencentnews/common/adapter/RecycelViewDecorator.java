@@ -5,9 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 
 import java.util.IllegalFormatFlagsException;
@@ -120,7 +118,7 @@ public class RecycelViewDecorator extends RecyclerView.ItemDecoration{
 
             dividerDrawable.setBounds(left,top,right,bottom);
             dividerDrawable.draw(c);
-            Log.e("params.bottomMargin--", params.bottomMargin+"ViewCompat.getTranslationY(child):--"+ ViewCompat.getTranslationY(child)+":"+parent.toString());
+            //Log.e("params.bottomMargin--", params.bottomMargin+"ViewCompat.getTranslationY(child):--"+ ViewCompat.getTranslationY(child)+":"+parent.toString());
 
 
 

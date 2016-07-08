@@ -7,4 +7,10 @@
     <color name="colorSelector">#56abe4</color>
     <color name="colorUnSelector">#a9b7b7</color>
     <color name="textColor">#9C9C9C</color>
+
+    <color name="color1">#FF4081</color>
+    <color name="color2">#56abe4</color>
+    <color name="color3">#a9b7b7</color>
+    <color name="color4">#3F51B5</color>
+
 </resources>

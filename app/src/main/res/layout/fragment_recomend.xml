@@ -5,7 +5,6 @@
     android:orientation="vertical"
     tools:context=".modules.fragment_recommend.ui.RecomendFragment">
     <!-- TODO: Update blank fragment layout -->
-
     <RelativeLayout
         android:id="@+id/toolbar_recommend"
         android:layout_width="match_parent"
@@ -14,39 +13,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="推荐"
-            android:textColor="#0D0D0D"
-            android:textSize="24sp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            />
+            android:text="推荐"
+            android:textColor="#0D0D0D"
+            android:textSize="24sp" />
 
         <ImageView
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:src="@drawable/night_live_search"
-            android:scaleType="centerCrop"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            />
+            android:scaleType="centerCrop"
+            android:src="@drawable/night_live_search" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#ABABAB"
             android:layout_alignParentBottom="true"
-
-            />
+            android:background="#ABABAB" />
     </RelativeLayout>
-
-
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
 
         <Button
             android:id="@+id/recommendText_recommend"
@@ -54,31 +45,27 @@
             android:layout_height="32dp"
             android:background="@null"
             android:text="登录刷新  看更多推荐"
-            android:textColor="#4F94CD"
-
-
-
-            />
+            android:textColor="#4F94CD" />
 
         <ImageView
             android:layout_width="16dp"
             android:layout_height="16dp"
-            android:src="@drawable/night_recommend_icon_more"
-            android:scaleType="centerCrop"
-           android:layout_alignParentRight="true"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="108dp"
-
-            />
-
-
+            android:scaleType="centerCrop"
+            android:src="@drawable/night_recommend_icon_more" />
     </RelativeLayout>
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swiperefreshlayout_recommend"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
-
-
-    
-
-
-
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycleview_recommend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

@@ -8,4 +8,11 @@ public class Constante{
 
     public static final int HANDLER_SUCCESS = 1;
     public static final int HANDLER_ERROR = 0;
+
+
+
+
+
+
+
 }
