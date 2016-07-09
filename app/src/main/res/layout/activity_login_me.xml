@@ -23,6 +23,7 @@
 
 
     <ImageView
+        android:id="@+id/close_login"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:src="@drawable/ic_promptbox_close"
@@ -42,7 +43,7 @@
 </RelativeLayout>
 
     
-    <TextView
+    <EditText
         android:id="@+id/account_login"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -61,7 +62,7 @@
 
         />
 
-    <TextView
+    <EditText
         android:id="@+id/pwd_login"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -97,5 +98,21 @@
         />
 
 
+    <Button
+        android:id="@+id/registerbutton_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+
+        android:background="@drawable/loginbutton_shape"
+        android:text="注册"
+        android:textSize="18sp"
+        android:textColor="#76AAAA"
+        android:backgroundTint="#C2C2C2"
+        android:gravity="center"
+        android:layout_below="@id/loginbutton_login"
+
+        android:layout_margin="20dp"
+        android:padding="10dp"
+        />
 
 </RelativeLayout>

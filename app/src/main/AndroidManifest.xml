@@ -18,5 +18,7 @@ xmlns:android="http://schemas.android.com/apk/res/android">
     </activity>
 
     <activity android:name=".modules.mainactivity.ui.MainActivity"></activity>
+    <activity android:name=".modules.activity_login.ui.LoginRegisterActivity"></activity>
+    <activity android:name=".modules.activity_news_detail.Activity_News_Details"></activity>
 </application>
 </manifest>

@@ -1,6 +1,7 @@
 package com.microsoft.tencentnews.modules.fragment_in_news.fragment_news_news.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,7 @@ import com.microsoft.tencentnews.common.adapter.RecycelViewDecorator;
 import com.microsoft.tencentnews.common.constante.Constante;
 import com.microsoft.tencentnews.common.net.HttpUtils;
 import com.microsoft.tencentnews.common.utils.UtilsAssets;
+import com.microsoft.tencentnews.modules.activity_news_detail.Activity_News_Details;
 import com.microsoft.tencentnews.modules.fragment_in_news.fragment_news_news.bean.NewsBean;
 
 import java.util.ArrayList;
@@ -95,11 +97,32 @@ public class News_newsFragment extends BaseFragment{
                 }
             }
 
+
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy){
                 super.onScrolled(recyclerView, dx, dy);
             }
         });
+
+
+       adapter.setOnRecycleViewItemClickListener(new News_newsAdapter.OnRecycleViewItemClickListener(){
+           @Override
+           public void itemClick(View v, String url){
+               Intent intent = new Intent();
+               intent.setClass(mycontext, Activity_News_Details.class);
+               intent.putExtra("url",url);
+
+               startActivity(intent);
+
+
+
+           }
+       });
+
+
+
+
+
         myHandler = new Handler(){
 
             @Override

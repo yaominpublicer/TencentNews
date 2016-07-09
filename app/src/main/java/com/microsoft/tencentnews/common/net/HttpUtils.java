@@ -2,6 +2,7 @@ package com.microsoft.tencentnews.common.net;
 
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.text.TextUtils;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -13,6 +14,7 @@ import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.gson.Gson;
+import com.microsoft.tencentnews.R;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -93,6 +95,12 @@ public class HttpUtils{
      * @param image     将要把网络图片加载的目标图片
      */
     public static void volleyLoadImage(final Context context, int imgWidth, int imgHeight, String imgURL, final ImageView image){
+
+       if(TextUtils.isEmpty(imgURL) || imgURL.length() <1){
+
+           image.setImageDrawable(context.getResources().getDrawable(R.drawable.icon));
+           return;
+       }
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         ImageRequest imageRequest = new ImageRequest(imgURL, new Response.Listener<Bitmap>(){
             @Override
@@ -106,6 +114,9 @@ public class HttpUtils{
 
             @Override
             public void onErrorResponse(VolleyError volleyError){
+
+                image.setImageDrawable(context.getResources().getDrawable(R.drawable.icon));
+
                 Log.e("onErrorResponse: 3", "image down error ");
                 //设置默认图片
                 // Toast.makeText(context, "image network error", Toast.LENGTH_SHORT).show();

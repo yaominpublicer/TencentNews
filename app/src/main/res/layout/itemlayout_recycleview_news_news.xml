@@ -7,7 +7,7 @@
 
     <ImageView
         android:id="@+id/img_news_news"
-        android:layout_width="100dp"
+        android:layout_width="120dp"
         android:layout_height="100dp"
         android:scaleType="centerCrop"
         android:src="@drawable/icon"
@@ -26,7 +26,7 @@
         android:layout_toLeftOf="@id/img_news_news"
         android:hint="习近平指示解放军武警部队支持地方做好防汛救灾"
         android:textSize="18sp"
-        android:textColor="@color/textColor"
+        android:textColor="#121212"
 
         android:maxLines="2"
         android:lineSpacingExtra="5dp"

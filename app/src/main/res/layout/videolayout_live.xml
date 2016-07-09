@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/videobg_live"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/videobg"
+        android:layout_centerInParent="true"
+        />
+
+    <ImageView
+        android:id="@+id/videoCorver_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/night_timeline_icon_tag_tuwen_living"
+        android:layout_alignBottom="@id/videobg_live"
+        android:layout_alignRight="@id/videobg_live"
+
+        />
+
+    <TextView
+        android:id="@+id/videlTitle_live"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:hint="计算器弹奏林俊杰经典曲目《江南》"
+        android:layout_alignBottom="@id/videobg_live"
+        android:layout_alignLeft="@id/videobg_live"
+        android:layout_marginLeft="15dp"
+
+        android:layout_marginBottom="15dp"
+        />
+</RelativeLayout>

@@ -35,7 +35,7 @@ public class NewsBeanRecommend{
 
 
     private CardBean card;
-    private int SubAdOn;
+
     private String media_id;
     private String sub_flag;
     private int alg_version;
@@ -44,13 +44,11 @@ public class NewsBeanRecommend{
     private String reason_name;
     private List<String> thumbnails_qqnews;
     private List<String> thumbnails;
-    private List<?> tag;
-    private List<?> author;
 
     public NewsBeanRecommend(){
     }
 
-    public NewsBeanRecommend(String id, String articletype, String flag, int timestamp, String time, String commentid, String url, String title, String abstractX, String chlid, String origUrl, int show_expr, int picShowType, String chlname, String chlmrk, String chlsicon, String chlicon, String uin, String source, String wechat, CardBean card, int subAdOn, String media_id, String sub_flag, int alg_version, String seq_no, String reasonInfo, String reason_name, List<String> thumbnails_qqnews, List<String> thumbnails, List<?> tag, List<?> author){
+    public NewsBeanRecommend(String id, String articletype, String flag, int timestamp, String time, String commentid, String url, String title, String abstractX, String chlid, String origUrl, int show_expr, int picShowType, String chlname, String chlmrk, String chlsicon, String chlicon, String uin, String source, String wechat, CardBean card, String media_id, String sub_flag, int alg_version, String seq_no, String reasonInfo, String reason_name, List<String> thumbnails_qqnews, List<String> thumbnails){
         this.id = id;
         this.articletype = articletype;
         this.flag = flag;
@@ -72,7 +70,6 @@ public class NewsBeanRecommend{
         this.source = source;
         this.wechat = wechat;
         this.card = card;
-        SubAdOn = subAdOn;
         this.media_id = media_id;
         this.sub_flag = sub_flag;
         this.alg_version = alg_version;
@@ -81,8 +78,6 @@ public class NewsBeanRecommend{
         this.reason_name = reason_name;
         this.thumbnails_qqnews = thumbnails_qqnews;
         this.thumbnails = thumbnails;
-        this.tag = tag;
-        this.author = author;
     }
 
     public String getId(){
@@ -253,13 +248,7 @@ public class NewsBeanRecommend{
         this.card = card;
     }
 
-    public int getSubAdOn(){
-        return SubAdOn;
-    }
 
-    public void setSubAdOn(int SubAdOn){
-        this.SubAdOn = SubAdOn;
-    }
 
     public String getMedia_id(){
         return media_id;
@@ -325,21 +314,7 @@ public class NewsBeanRecommend{
         this.thumbnails = thumbnails;
     }
 
-    public List<?> getTag(){
-        return tag;
-    }
 
-    public void setTag(List<?> tag){
-        this.tag = tag;
-    }
-
-    public List<?> getAuthor(){
-        return author;
-    }
-
-    public void setAuthor(List<?> author){
-        this.author = author;
-    }
 
     public static class CardBean{
         private String chlname;

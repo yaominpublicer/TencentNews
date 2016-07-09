@@ -30,6 +30,8 @@ public class News_newsAdapter extends RecyclerView.Adapter{
     private final int TYPE_ITEMVIEW = 1;
     private final int TYPE_HEADVIEW = 2;
 
+    public  String currentUrl;
+
 
 
     int maxWidth;
@@ -45,6 +47,25 @@ public class News_newsAdapter extends RecyclerView.Adapter{
 
 
     }
+
+
+
+    private OnRecycleViewItemClickListener listener=null;
+
+    public interface OnRecycleViewItemClickListener{
+
+        void itemClick(View v,String url);
+    }
+
+
+    public void setOnRecycleViewItemClickListener(OnRecycleViewItemClickListener listener ){
+
+        this.listener = listener;
+
+    }
+
+
+
 
     @Override
     public int getItemCount(){
@@ -73,18 +94,18 @@ public class News_newsAdapter extends RecyclerView.Adapter{
         if(TYPE_ITEMVIEW == viewType){
 
             View inflateView = inflater.inflate(R.layout.itemlayout_recycleview_news_news, parent, false);
-            MyViewHolder myHolder = new MyViewHolder(inflateView);
+            MyViewHolder myHolder = new MyViewHolder(inflateView,listener);
             return myHolder;
         }else if(TYPE_FOOTVIEW == viewType) {
 
             View footView=inflater.inflate(R.layout.footview_news_news,parent,false);
-            return new MyFootViewHolder(footView);
+            return new MyFootViewHolder(footView,listener);
         }else {
 
 
             View headView=inflater.inflate(R.layout.headview_news_news,parent,false);
 
-            return new MyHeadViewHolder(headView);
+            return new MyHeadViewHolder(headView,listener);
 
 
         }
@@ -92,6 +113,8 @@ public class News_newsAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position){
+
+        currentUrl=newsContentList.get(position).getUrl();
 
         //如果是itemview的话 就绑定 否则什么都不做就显示一下
         if(holder instanceof MyViewHolder ){
@@ -120,14 +143,29 @@ public class News_newsAdapter extends RecyclerView.Adapter{
         ImageView imageView;
         TextView titleText;
         TextView comment;
+        OnRecycleViewItemClickListener listener;
 
-        public MyViewHolder(View itemView){
+        public MyViewHolder(View itemView, final OnRecycleViewItemClickListener listener){
             super(itemView);
             imageView = (ImageView) itemView.findViewById(R.id.img_news_news);
             titleText = (TextView) itemView.findViewById(R.id.title_news_news);
             comment = (TextView) itemView.findViewById(R.id.comment_news_news);
             maxWidth =  imageView.getLayoutParams().width;
             maxHeight = imageView.getLayoutParams().height;
+            this.listener=listener;
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+
+                    if(listener != null){
+                        listener.itemClick(v,currentUrl);
+                    }
+
+                }
+            });
+
+
 
 
             Log.e("onBindViewHolder: 4",maxWidth+"---"+maxHeight );
@@ -137,9 +175,20 @@ public class News_newsAdapter extends RecyclerView.Adapter{
     class MyFootViewHolder extends RecyclerView.ViewHolder{
 
         View view;
-        public MyFootViewHolder(View itemView){
+
+        OnRecycleViewItemClickListener listener;
+        public MyFootViewHolder(View itemView, final OnRecycleViewItemClickListener listener){
             super(itemView);
             this.view = itemView;
+            this.listener=listener;
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    listener.itemClick(v,currentUrl);
+
+                }
+            });
         }
     }
 
@@ -149,8 +198,8 @@ public class News_newsAdapter extends RecyclerView.Adapter{
           int headimageWidth;
          int headimageHeight;
 
-
-        public MyHeadViewHolder(View itemView){
+        OnRecycleViewItemClickListener listener;
+        public MyHeadViewHolder(View itemView, final OnRecycleViewItemClickListener listener){
 
             super(itemView);
 
@@ -160,6 +209,16 @@ public class News_newsAdapter extends RecyclerView.Adapter{
 
             headimageWidth =headimage.getLayoutParams().width;
             headimageHeight=headimage.getLayoutParams().height;
+
+            this.listener = listener ;
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+
+                    listener.itemClick(v,currentUrl);
+                }
+            });
 
 
         }

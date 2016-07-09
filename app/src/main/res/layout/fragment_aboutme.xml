@@ -54,11 +54,25 @@
             />
 
         <TextView
+            android:id="@+id/textlogin_head_me"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="点击登录"
 
             android:layout_below="@id/user_head_me"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="#EAEAEA"
+            />
+
+        <TextView
+            android:id="@+id/changeimg_head_me"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传头像"
+
+            android:layout_below="@id/textlogin_head_me"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:textSize="16sp"
@@ -148,7 +162,7 @@
                 android:id="@+id/text03_me"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="日间模式"
+                android:text="下载模式"
                 android:layout_marginTop="-5dp"
                 android:textColor="#EAEAEA"
                 />
