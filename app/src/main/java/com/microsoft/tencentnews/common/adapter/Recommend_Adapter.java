@@ -2,7 +2,6 @@ package com.microsoft.tencentnews.common.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,9 +66,9 @@ public class Recommend_Adapter extends RecyclerView.Adapter{
         ((RecommendViewHolder) holder).comment_recommend.setText(list.get(position).getReason_name());
         webur02=list.get(position).getUrl();
         String imgurl=list.get(position).getThumbnails_qqnews().get(0);
-        Log.e("recommendadapter","onBindViewHolder: ---"+imgurl);
+      //  Log.e("recommendadapter","onBindViewHolder: ---"+imgurl);
         HttpUtils.volleyLoadImage(context,imgWidth,imgHeight,imgurl,((RecommendViewHolder) holder).img_recommend);
-        Log.e("recommendadapter","onBindViewHolder: ---test volley-----");
+       // Log.e("recommendadapter","onBindViewHolder: ---test volley-----");
 
     }
 
@@ -78,47 +77,31 @@ public class Recommend_Adapter extends RecyclerView.Adapter{
         return list.size();
     }
 
+    class RecommendViewHolder extends RecyclerView.ViewHolder{
 
-   class RecommendViewHolder extends RecyclerView.ViewHolder{
+        ImageView img_recommend;
+        TextView title_recommend;
+        TextView comment_recommend;
+        private OnRecycleViewItemClickListener02 listener02 = null;
 
-       ImageView img_recommend;
-       TextView title_recommend;
-       TextView comment_recommend;
-       private OnRecycleViewItemClickListener02 listener02=null;
-
-
-       public RecommendViewHolder(final View itemView, final OnRecycleViewItemClickListener02 listener){
-           super(itemView);
-
-           img_recommend = (ImageView) itemView.findViewById(R.id.item_img_recommend);
-           title_recommend=((TextView) itemView.findViewById(R.id.item_title_recommend));
-           comment_recommend = (TextView) itemView.findViewById(R.id.item_comment_recommend);
-
+        public RecommendViewHolder(final View itemView, final OnRecycleViewItemClickListener02 listener){
+            super(itemView);
+            img_recommend = (ImageView) itemView.findViewById(R.id.item_img_recommend);
+            title_recommend = ((TextView) itemView.findViewById(R.id.item_title_recommend));
+            comment_recommend = (TextView) itemView.findViewById(R.id.item_comment_recommend);
             imgWidth = img_recommend.getLayoutParams().width;
-           imgHeight = img_recommend.getLayoutParams().height;
-
-           this.listener02=listener;
-
-           itemView.setOnClickListener(new View.OnClickListener(){
-               @Override
-               public void onClick(View v){
-
-                   if(listener02 != null){
-
-                       listener02.itemClick(itemView,webur02);
-
-                   }
-
-
-
-               }
-           });
-
-
-
-
-       }
-   }
+            imgHeight = img_recommend.getLayoutParams().height;
+            this.listener02 = listener;
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+                    if(listener02 != null){
+                        listener02.itemClick(itemView, webur02);
+                    }
+                }
+            });
+        }
+    }
 
 
 

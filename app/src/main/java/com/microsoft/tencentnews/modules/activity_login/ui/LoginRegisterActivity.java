@@ -45,8 +45,7 @@ public class LoginRegisterActivity extends BaseActivity implements View.OnClickL
             public boolean onTouch(View v, MotionEvent event){
 
                 if( !isChangedColor){
-                    loginButton_login.setBackgroundColor(0xCD0000);
-                    registerButton_login .setBackgroundColor(0xCD0000);
+
                 }
 
 
@@ -60,8 +59,7 @@ public class LoginRegisterActivity extends BaseActivity implements View.OnClickL
             public boolean onTouch(View v, MotionEvent event){
 
                 if( !isChangedColor){
-                    loginButton_login.setBackgroundColor(0xCD0000);
-                    registerButton_login .setBackgroundColor(0xCD0000);
+
                 }
                 isChangedColor=true;
                 return true;

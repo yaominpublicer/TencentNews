@@ -58,6 +58,7 @@ public abstract class BaseFragment extends Fragment{
 
 
 
+
         AssetManager assetManager = getResources().getAssets();
         try{
             String[] fileList = assetManager.list("newsinterface");

@@ -20,7 +20,7 @@ public class UtilsAssets{
 
 
     //1:此类功能 读取assets目录下的网络接口文件
-    public static List<String> getInterfaceFromAssets(AssetManager manager, String fileName){
+      public static List<String> getInterfaceFromAssets(AssetManager manager, String fileName){
         InputStream inputStream = null;
         BufferedReader bfReader = null;
         StringBuffer stBuffer;
@@ -40,7 +40,7 @@ public class UtilsAssets{
             String[] interfaceArray = allString.split("http://");
             for(int i = 0; i < interfaceArray.length; i++){
                 String s = interfaceArray[i];
-                if(s != null && s.length() >= 1){
+                if(s != null && s.length() >7){
                     String temp = "http://" + s.trim();
                     interfaceList.add(temp);
                     // Log.d("getInterfaceFromAssets: ",temp);

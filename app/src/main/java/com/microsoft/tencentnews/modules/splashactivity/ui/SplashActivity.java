@@ -2,6 +2,7 @@ package com.microsoft.tencentnews.modules.splashactivity.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.microsoft.tencentnews.R;
 import com.microsoft.tencentnews.base.BaseActivity;
@@ -13,7 +14,7 @@ public class SplashActivity extends BaseActivity{
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(setViewID());
-        initEvent();
+       // initEvent();
 
 
 
@@ -23,6 +24,7 @@ public class SplashActivity extends BaseActivity{
     @Override
     protected int setViewID(){
         return R.layout.activity_splash;
+
     }
 
     @Override

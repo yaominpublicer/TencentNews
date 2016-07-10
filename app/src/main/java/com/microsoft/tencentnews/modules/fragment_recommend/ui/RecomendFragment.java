@@ -11,7 +11,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -46,7 +45,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
     MainNewsBean mainNewsBean=new MainNewsBean();
     private Handler myHandler;
     private RelativeLayout footView;
-    private AlphaAnimation alphaAnimation;
+
 
     private ImageView more_recommend;
     private Button recommendButton_recommend;
@@ -72,9 +71,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
         interfaceList = interfaceUrlMap.get("recommend_interface.txt");
 
 
-        alphaAnimation = new AlphaAnimation(1,0);
-        alphaAnimation.setDuration(3000);
-        alphaAnimation.setStartOffset(1000);
+        loadDataByPageStep(page);
 
 
 
@@ -88,8 +85,6 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initEvent(){
         mySwipeRefreshLayout.setColorSchemeResources(R.color.color1, R.color.color2, R.color.color3, R.color.color4);
-        mySwipeRefreshLayout.setProgressViewOffset(true,0,18);
-
         mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
             @Override
             public void onRefresh(){
@@ -114,6 +109,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
                     strlist.addAll(nbrList);
                     recommendAdapter.notifyDataSetChanged();
                 }else{
+                    Log.e("recommend", "----handler ---error -----");
                 }
             }
         };
@@ -132,7 +128,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
                 if(passCount + currentCount >= allCount){
                     //刷新
 
-                    footView.startAnimation(alphaAnimation);
+
                     loadDataByPageStep(++page);
 
                 }
@@ -165,7 +161,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
 
 
 
-            loadDataByPageStep(page);
+
 
 
 
@@ -200,7 +196,7 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
                     String jsonUrlStr = interfaceList.get(pageNum);
                     String jsonStr = HttpUtils.downLoadJson(mycontext, jsonUrlStr);
                     MainNewsBean mainnews = HttpUtils.parseJson(mainNewsBean, jsonStr);
-                    Log.e("recommend", "--------------------mainnews--------------------");
+                //    Log.e("recommend", "--------------------mainnews--------------------");
                     if(mainnews != null){
                         Message message = myHandler.obtainMessage();
                         message.what = Constante.HANDLER_SUCCESS;
