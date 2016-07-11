@@ -31,30 +31,52 @@ public class HttpUtils{
 
     private static String jsonStr;
 
+
+
     public static String downLoadJson(final Context context, String urlString){
         RequestQueue queue = Volley.newRequestQueue(context);
-        StringRequest request = new StringRequest(urlString, new Response.Listener<String>(){
+        try{
+            StringRequest request = new StringRequest(urlString,
+                    new Response.Listener<String>(){
 
-            @Override
-            public void onResponse(String s){
-                jsonStr = s;
-                Log.e("volley", "onResponse: ok");
-            }
-        }, new Response.ErrorListener(){
-            @Override
-            public void onErrorResponse(VolleyError volleyError){
-                Toast.makeText(context, "net work error ", Toast.LENGTH_SHORT).show();
-                Log.e("volley", "onResponse: error");
-            }
-        });
-        queue.add(request);
+                @Override
+                public void onResponse(String s){
+                    jsonStr = s;
+                    Log.e("volley", "onResponse: ok");
+                }
+            }, new Response.ErrorListener(){
+                @Override
+                public void onErrorResponse(VolleyError volleyError){
+                    Toast.makeText(context, "net work error ", Toast.LENGTH_SHORT).show();
+                    Log.e("volley", "onResponse: error");
+                }
+            });
+            queue.add(request);
+        }catch(Exception e){
+            Log.e("volley","--------volley----downLoadJson: ----error---- ");
+            e.printStackTrace();
+        }
         return jsonStr;
     }
 
+
+
+
     public static <T> T parseJson(T clazz, String jsonStr){
-        Gson gson = new Gson();
-        T t = (T) gson.fromJson(jsonStr, clazz.getClass());
-        return t;
+        //htttp://  length = 7
+        try{
+            if(jsonStr != null && jsonStr.length()>7){
+                Gson gson = new Gson();
+                T t = (T) gson.fromJson(jsonStr, clazz.getClass());
+                return t;
+            }else {
+
+                throw  new IllegalArgumentException(" ----gson parse error----");
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static String getJsonString(Context context, String url){

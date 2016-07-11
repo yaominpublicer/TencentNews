@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    >
 
     <ImageView
         android:id="@+id/videobg_live"
@@ -14,8 +16,8 @@
 
     <ImageView
         android:id="@+id/videoCorver_live"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="28dp"
         android:scaleType="centerCrop"
         android:src="@drawable/night_timeline_icon_tag_tuwen_living"
         android:layout_alignBottom="@id/videobg_live"
@@ -27,12 +29,15 @@
         android:id="@+id/videlTitle_live"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:hint="计算器弹奏林俊杰经典曲目《江南》"
-        android:layout_alignBottom="@id/videobg_live"
+        android:text="计算器弹奏林俊杰经典曲目《江南》"
+        android:hint="计算器弹奏林俊杰经典"
+        android:textColor="#E3E3E3"
+        android:layout_alignTop="@id/videobg_live"
         android:layout_alignLeft="@id/videobg_live"
         android:layout_marginLeft="15dp"
-
-        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
         />
+
+
+
 </RelativeLayout>
