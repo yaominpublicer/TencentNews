@@ -44,7 +44,7 @@ public class RecycleViewAdapter_news_video extends RecyclerView.Adapter{
         if(list.size() == 0 || list == null){
             return 20;
         }else{
-            return 0;
+            return list.size();
         }
     }
 

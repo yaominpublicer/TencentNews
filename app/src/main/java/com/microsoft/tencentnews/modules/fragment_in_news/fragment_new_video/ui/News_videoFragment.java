@@ -65,7 +65,7 @@ public class News_videoFragment extends BaseFragment{
         adapter = new RecycleViewAdapter_news_video(context,sublist);
         manager = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
         decorator = new RecycelViewDecorator(context,0);
-
+        ryView.setLayoutManager(manager);
         ryView.addItemDecoration(decorator);
         ryView.setAdapter(adapter);
 
