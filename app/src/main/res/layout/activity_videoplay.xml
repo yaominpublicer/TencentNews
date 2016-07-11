@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <VideoView
+        android:id="@+id/videoView_VideoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+
+    <ImageView
+        android:id="@+id/videocover_videoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon"
+
+
+        />
+
+    <ImageView
+        android:id="@+id/changeScreen_videoActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/videoView_VideoActivity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/documentary_list_icon_video_flag_small"
+
+
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@id/videoView_VideoActivity"
+        android:layout_alignRight="@id/videoView_VideoActivity"
+
+        android:scaleType="centerCrop"
+        android:src="@drawable/night_share_btn_refresh_press" />
+
+
+    <ImageView
+        android:id="@+id/shard_weichat_videoActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/night_sso_wx"
+        android:layout_below="@id/videoView_VideoActivity"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/shard_qq_videoActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/night_share_qq_icon"
+        android:layout_below="@id/videoView_VideoActivity"
+        android:layout_toRightOf="@id/shard_weichat_videoActivity"
+        />
+
+    <ImageView
+        android:id="@+id/shard_qqzoom_videoActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/night_share_qzone_icon"
+        android:layout_below="@id/videoView_VideoActivity"
+        android:layout_toRightOf="@id/shard_qq_videoActivity"
+        />
+
+    <ImageView
+        android:id="@+id/shard_sina_videoActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/night_share_sina_icon"
+        android:layout_below="@id/videoView_VideoActivity"
+        android:layout_toRightOf="@id/shard_qqzoom_videoActivity"
+        />
+
+    <ImageView
+        android:id="@+id/shard_comment_videoActivity"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/icon_tl_comment"
+        android:layout_below="@id/videoView_VideoActivity"
+        android:layout_alignParentRight="true"
+        />
+
+
+
+</RelativeLayout>

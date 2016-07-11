@@ -85,7 +85,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
 
-        android:background="@drawable/loginbutton_shape"
+        android:background="@drawable/selector_loginbutton_bg"
         android:text="登录"
         android:textSize="18sp"
         android:textColor="#76AAAA"
@@ -103,7 +103,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
 
-        android:background="@drawable/loginbutton_shape"
+        android:background="@drawable/selector_loginbutton_bg"
         android:text="注册"
         android:textSize="18sp"
         android:textColor="#76AAAA"
