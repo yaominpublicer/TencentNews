@@ -58,7 +58,7 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter{
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
         try{
-            webUrl = subNewsBeenList.get(position).getM3u8_url();
+            webUrl = subNewsBeenList.get(position).getMp4_url();
             ((LiveViewHolder) holder).title_live.setText(subNewsBeenList.get(position).getTitle());
             HttpUtils.volleyLoadImage(context, imgWidth, imgHeight, subNewsBeenList.get(position).getCover(), ((LiveViewHolder) holder).background_live);
         }catch(Exception e){
@@ -69,7 +69,13 @@ public class LiveRecycleAdapter extends RecyclerView.Adapter{
 
     @Override
     public int getItemCount(){
+        if(subNewsBeenList.size()==0){
+            //false data
+            return 20;
+        }else {
+
         return subNewsBeenList.size();
+        }
     }
 
 

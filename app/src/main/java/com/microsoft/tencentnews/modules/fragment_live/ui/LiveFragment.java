@@ -1,6 +1,7 @@
 package com.microsoft.tencentnews.modules.fragment_live.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
@@ -17,6 +18,7 @@ import com.microsoft.tencentnews.common.adapter.RecycelViewDecorator;
 import com.microsoft.tencentnews.common.constante.Constante;
 import com.microsoft.tencentnews.common.net.HttpUtils;
 import com.microsoft.tencentnews.common.utils.UtilsAssets;
+import com.microsoft.tencentnews.modules.activity_videoplay.ActivityVideoPlay;
 import com.microsoft.tencentnews.modules.fragment_live.bean.NewsBeanLive;
 import com.microsoft.tencentnews.modules.fragment_live.bean.SubNewsBean;
 
@@ -88,7 +90,12 @@ public class LiveFragment extends BaseFragment{
         adapter.setOnRecycleViewItemClickListener03(new LiveRecycleAdapter.OnRecycleViewItemClickListener03(){
             @Override
             public void clickItem(View v, String webUrl){
+                Intent videoPlayIntent=new Intent();
+                videoPlayIntent.setClass(mycontext, ActivityVideoPlay.class);
 
+                videoPlayIntent.putExtra("url",webUrl);
+
+                startActivity(videoPlayIntent);
 
 
 

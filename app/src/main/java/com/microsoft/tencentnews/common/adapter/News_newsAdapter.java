@@ -24,67 +24,54 @@ public class News_newsAdapter extends RecyclerView.Adapter{
     private List<NewsBean.NewsContent> newsContentList;
     private final LayoutInflater inflater;
 
-
     private final int TYPE_FOOTVIEW = 0;
     private final int TYPE_ITEMVIEW = 1;
     private final int TYPE_HEADVIEW = 2;
 
-    public  String currentUrl;
-
-
+    public String currentUrl;
 
     public int maxWidth;
     public int maxHeight;
     private final AlphaAnimation alphaAnimation;
+
     public News_newsAdapter(Context context, List<NewsBean.NewsContent> List){
         this.context = context;
         this.newsContentList = List;
         inflater = LayoutInflater.from(context);
-        alphaAnimation = new AlphaAnimation(1,0);
+        alphaAnimation = new AlphaAnimation(1, 0);
         alphaAnimation.setDuration(2000);
         alphaAnimation.setStartOffset(1000);
-
-
     }
 
-
-
-    private OnRecycleViewItemClickListener listener=null;
+    private OnRecycleViewItemClickListener listener = null;
 
     public interface OnRecycleViewItemClickListener{
 
         void itemClick(View v, String url);
     }
 
-
-    public void setOnRecycleViewItemClickListener(OnRecycleViewItemClickListener listener ){
-
+    public void setOnRecycleViewItemClickListener(OnRecycleViewItemClickListener listener){
         this.listener = listener;
-
     }
-
-
-
 
     @Override
     public int getItemCount(){
-        return newsContentList.size();
+        if(newsContentList.size() == 0){
+            return 20;
+        }else{
+            return newsContentList.size();
+        }
     }
 
     @Override
     public int getItemViewType(int position){
-
         if(position + 1 == getItemCount()){
-
             return TYPE_FOOTVIEW;
         }else if(position == 0){
-           return TYPE_HEADVIEW ;
-        }else {
+            return TYPE_HEADVIEW;
+        }else{
             return TYPE_ITEMVIEW;
         }
-
-
-
     }
 
     @Override
@@ -104,10 +91,10 @@ public class News_newsAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, int position){
-        currentUrl = newsContentList.get(position).getUrl();
         //防止获取的数据为空 进行try catch
         //如果是itemview的话 就绑定 否则什么都不做就显示一下
         try{
+            currentUrl = newsContentList.get(position).getUrl();
             if(holder instanceof MyViewHolder){
                 ((MyViewHolder) holder).titleText.setText(newsContentList.get(position).getTitle());
                 ((MyViewHolder) holder).comment.setText(newsContentList.get(position).getSource());
@@ -124,7 +111,7 @@ public class News_newsAdapter extends RecyclerView.Adapter{
         }
     }
 
-     class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
         TextView titleText;
@@ -147,27 +134,24 @@ public class News_newsAdapter extends RecyclerView.Adapter{
                     }
                 }
             });
-           // Log.e("onBindViewHolder: 4", maxWidth + "---" + maxHeight);
+            // Log.e("onBindViewHolder: 4", maxWidth + "---" + maxHeight);
         }
-
-
-     }
+    }
 
     class MyFootViewHolder extends RecyclerView.ViewHolder{
 
         View view;
 
         OnRecycleViewItemClickListener listener;
+
         public MyFootViewHolder(View itemView, final OnRecycleViewItemClickListener listener){
             super(itemView);
             this.view = itemView;
-            this.listener=listener;
-
+            this.listener = listener;
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    listener.itemClick(v,currentUrl);
-
+                    listener.itemClick(v, currentUrl);
                 }
             });
         }
@@ -176,10 +160,11 @@ public class News_newsAdapter extends RecyclerView.Adapter{
     class MyHeadViewHolder extends RecyclerView.ViewHolder{
 
         ImageView headimage;
-          int headimageWidth;
-         int headimageHeight;
+        int headimageWidth;
+        int headimageHeight;
 
         OnRecycleViewItemClickListener listener;
+
         public MyHeadViewHolder(View itemView, final OnRecycleViewItemClickListener listener){
             super(itemView);
             headimage = (ImageView) itemView.findViewById(R.id.headview_news_news);
@@ -194,9 +179,4 @@ public class News_newsAdapter extends RecyclerView.Adapter{
             });
         }
     }
-
-
-
-
-
 }

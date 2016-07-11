@@ -19,11 +19,11 @@ import java.util.List;
  */
 public class Recommend_Adapter extends RecyclerView.Adapter{
 
-    private  List<NewsBeanRecommend> list;
-    private  Context context;
+    private List<NewsBeanRecommend> list;
+    private Context context;
     private int imgWidth;
     private int imgHeight;
-    private  LayoutInflater inflater;
+    private LayoutInflater inflater;
     private OnRecycleViewItemClickListener02 listener;
     private String webur02;
 
@@ -31,50 +31,48 @@ public class Recommend_Adapter extends RecyclerView.Adapter{
         this.context = context;
         this.list = list;
         inflater = LayoutInflater.from(context);
-
     }
-
-
-
 
     public interface OnRecycleViewItemClickListener02{
 
-        void itemClick(View v,String url);
+        void itemClick(View v, String url);
     }
 
     public void SetOnReCycleViewItemClickListener02(OnRecycleViewItemClickListener02 listener){
-        this.listener=listener;
+        this.listener = listener;
     }
-
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-
-
-        View recommendView = inflater.inflate(R.layout.itemlayout_recommend,parent,false);
-
-        RecommendViewHolder recommendViewHolder = new RecommendViewHolder(recommendView,listener);
-
+        View recommendView = inflater.inflate(R.layout.itemlayout_recommend, parent, false);
+        RecommendViewHolder recommendViewHolder = new RecommendViewHolder(recommendView, listener);
         return recommendViewHolder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position){
+        try{
+
+            ((RecommendViewHolder) holder).title_recommend.setText(list.get(position).getTitle());
+            ((RecommendViewHolder) holder).comment_recommend.setText(list.get(position).getReason_name());
+            webur02 = list.get(position).getUrl();
+            String imgurl = list.get(position).getThumbnails_qqnews().get(0);
+            //  Log.e("recommendadapter","onBindViewHolder: ---"+imgurl);
+            HttpUtils.volleyLoadImage(context, imgWidth, imgHeight, imgurl, ((RecommendViewHolder) holder).img_recommend);
+            // Log.e("recommendadapter","onBindViewHolder: ---test volley-----");
+        }catch(Exception e){
 
 
-        ((RecommendViewHolder) holder).title_recommend.setText(list.get(position).getTitle());
-        ((RecommendViewHolder) holder).comment_recommend.setText(list.get(position).getReason_name());
-        webur02=list.get(position).getUrl();
-        String imgurl=list.get(position).getThumbnails_qqnews().get(0);
-      //  Log.e("recommendadapter","onBindViewHolder: ---"+imgurl);
-        HttpUtils.volleyLoadImage(context,imgWidth,imgHeight,imgurl,((RecommendViewHolder) holder).img_recommend);
-       // Log.e("recommendadapter","onBindViewHolder: ---test volley-----");
-
+        }
     }
 
     @Override
     public int getItemCount(){
-        return list.size();
+        if(list.size() == 0){
+            return 20;
+        }else{
+            return list.size();
+        }
     }
 
     class RecommendViewHolder extends RecyclerView.ViewHolder{
@@ -102,11 +100,6 @@ public class Recommend_Adapter extends RecyclerView.Adapter{
             });
         }
     }
-
-
-
-
-
 }
 
 

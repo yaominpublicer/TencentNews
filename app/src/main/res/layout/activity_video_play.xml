@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.microsoft.tencentnews.modules.activity_videoplay.ActivityVideoPlay">
+
+
+
+
+    <io.vov.vitamio.widget.VideoView
+
+        android:id="@+id/surfaceView_videoPlay"
+
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+         />
+
+
+    <ImageView
+        android:id="@+id/weichat_videoplayActivity"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/night_share_weixin_icon"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_alignLeft="@id/surfaceView_videoPlay"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+
+        android:id="@+id/qzone_videoplayActivity"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/night_share_qzone_icon_press"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_toRightOf="@id/weichat_videoplayActivity"
+
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/qq_videoplayActivity"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/night_sso_qq"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_toRightOf="@id/qzone_videoplayActivity"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <ImageView
+        android:id="@+id/sina_videoplayActivity"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:src="@drawable/night_share_sina_icon"
+        android:scaleType="centerCrop"
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_toRightOf="@id/qq_videoplayActivity"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        />
+
+    <TextView
+        android:id="@+id/playCount_videoActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_alignParentRight="true"
+
+        android:text="播放:5999"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="分享到"
+
+        android:layout_below="@id/surfaceView_videoPlay"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        />
+
+    <TextView
+        android:id="@+id/comment_videoActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="全部评论"
+
+        android:layout_below="@id/weichat_videoplayActivity"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        />
+    <View
+        android:id="@+id/line_videoActivity"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        android:layout_below="@id/comment_videoActivity"
+        />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/commentRecycleView_videoActivity"
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent"
+        android:layout_below="@id/line_videoActivity"
+        android:layout_margin="5dp"
+        >
+
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <ProgressBar
+        android:id="@+id/progressbar_videoActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+
+        android:layout_alignTop="@id/surfaceView_videoPlay"
+
+        android:layout_marginTop="100dp"
+        />
+
+</RelativeLayout>

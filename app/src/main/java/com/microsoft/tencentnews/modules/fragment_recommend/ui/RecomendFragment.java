@@ -10,6 +10,7 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -85,11 +86,16 @@ public class RecomendFragment extends BaseFragment implements View.OnClickListen
     @Override
     protected void initEvent(){
         mySwipeRefreshLayout.setColorSchemeResources(R.color.color1, R.color.color2, R.color.color3, R.color.color4);
+
+        mySwipeRefreshLayout.setProgressViewOffset(true,0, (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,24f,getResources().getDisplayMetrics()));
+
+
         mySwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
             @Override
             public void onRefresh(){
                 //刷新 the first page
                 loadDataByPageStep(0);
+                mySwipeRefreshLayout.setRefreshing(false);
             }
         });
         final LinearLayoutManager manager = new LinearLayoutManager(mycontext, LinearLayoutManager.VERTICAL, false);

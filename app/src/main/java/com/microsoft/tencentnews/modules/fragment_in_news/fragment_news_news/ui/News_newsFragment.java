@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -41,6 +42,8 @@ public class News_newsFragment extends BaseFragment{
     private Context mycontext;
     private static int page;
     private Handler myHandler;
+    private boolean isRefresh=false;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected int setViewID(){
@@ -50,6 +53,9 @@ public class News_newsFragment extends BaseFragment{
     @Override
     protected void findViews(View myView){
         recyclerView = (RecyclerView) myView.findViewById(R.id.recycelView_news_news);
+        swipeRefreshLayout = (SwipeRefreshLayout) myView.findViewById(R.id.swiperefreshlayout_news_news);
+
+
     }
 
     @Override
@@ -101,6 +107,9 @@ public class News_newsFragment extends BaseFragment{
             @Override
             public void onScrolled(RecyclerView recyclerView, int dx, int dy){
                 super.onScrolled(recyclerView, dx, dy);
+
+                // 刚进入页面显示默认数据，滑动下进行更新
+
             }
         });
 
@@ -140,6 +149,23 @@ public class News_newsFragment extends BaseFragment{
                 }
             }
         };
+
+
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener(){
+            @Override
+            public void onRefresh(){
+                recycleViewStepLoad(0);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
+
+
+
+
+
+
+
     }
 
     @Override

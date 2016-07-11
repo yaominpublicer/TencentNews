@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp"
+
+    >
+
+
+    <TextView
+        android:id="@+id/title_news_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="孩子你发誓 你真的记住了吗？"
+        android:layout_marginTop="5dp"
+
+
+
+        />
+
+    <ImageView
+        android:id="@+id/img_news_video"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:src="@drawable/videobg"
+        android:scaleType="centerCrop"
+
+        android:layout_below="@id/title_news_video"
+        android:layout_marginTop="5dp"
+
+        />
+
+    <TextView
+        android:id="@+id/duration_news_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:text="02:10"
+
+        android:background="#00f"
+
+        android:layout_alignBottom="@id/img_news_video"
+        android:layout_alignRight="@id/img_news_video"
+
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+
+
+        />
+
+
+    <Button
+        android:id="@+id/source_news_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@mipmap/me"
+        android:text="宝妈智慧"
+        android:layout_below="@id/img_news_video"
+        />
+
+    <Button
+        android:id="@+id/type_news_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="萌娃"
+
+        android:layout_below="@id/img_news_video"
+
+        android:layout_toRightOf="@id/source_news_video"
+
+        />
+
+
+    <ImageView
+        android:id="@+id/heart_news_video"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="@drawable/selector_heart_news_video"
+
+        android:layout_below="@id/img_news_video"
+
+        android:layout_alignParentRight="true"
+
+        android:layout_marginRight="80dp"
+
+        />
+
+    <TextView
+        android:id="@+id/num_news_video"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+
+
+        android:text="449"
+
+        android:layout_below="@id/img_news_video"
+       android:layout_alignParentRight="true"
+
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="60dp"
+
+        />
+
+    <TextView
+        android:id="@+id/threedot_news_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="..."
+        android:textSize="30sp"
+
+        android:layout_below="@id/img_news_video"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+
+
+        />
+
+
+
+
+
+</RelativeLayout>
